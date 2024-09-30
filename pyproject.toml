@@ -33,3 +33,6 @@ excude = '.git'
 
 [tool.isort]
 line-length = 119
+
+[tool.flake8]
+line-length = 119
