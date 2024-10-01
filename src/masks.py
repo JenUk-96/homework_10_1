@@ -3,7 +3,7 @@ def get_mask_card_number(card_numbers: str) -> str:
     card_number = str(card_numbers)
     if card_number.isdigit():
         if len(card_number) < 16:
-            return ("Ошибка ввода")
+            return "Ошибка ввода"
         elif len(card_number) > 16:
             return "Ошибка ввода"
 
