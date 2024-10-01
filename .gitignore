@@ -40,7 +40,7 @@ Unit test / coverage reports
 htmlcov/
 .tox/
 .nox/
-.coverage
+htmlcov/.coverage
 .coverage.*
 .cache
 nosetests.xml
