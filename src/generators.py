@@ -12,8 +12,7 @@ def filter_by_currency(transactions: list[dict], currency: str) -> Iterator[dict
 def transaction_descriptions(transactions: list[dict]) -> Iterator[str]:
     """Функция, которая возвращает описание каждой операции по очереди."""
     for i in transactions:
-        yield i ["description"]
-
+        yield i["description"]
 
 
 def card_number_generator(start: int, end: int) -> Iterator[str]:

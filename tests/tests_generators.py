@@ -51,7 +51,7 @@ def test_filter_by_currency(transactions_generator: list, empty_lsts: list) -> N
 
 
 def test_transaction_descriptions(transactions_generator: list, empty_lsts: list, ) -> None:
-    descriptions = transaction_descriptions (transactions_generator)
+    descriptions = transaction_descriptions(transactions_generator)
     assert next(descriptions) == "Перевод организации"
 
     assert next(descriptions) == "Перевод со счета на счет"
@@ -68,7 +68,6 @@ def test_transaction_descriptions(transactions_generator: list, empty_lsts: list
     ('32214', '987546', ['']),
     (10, 9, [''])
                                                 ])
-
 def test_card_number_generator(start: int, stop: int, result: list) -> None:
     generator_card = list(card_number_generator(start, stop))
     assert generator_card == result
