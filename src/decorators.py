@@ -13,22 +13,22 @@ def log(filename: Union[None, str] = None) -> Any:
                 with open('log.txt', 'a', encoding='utf-8') as file:
                     try:
                         file.write(f'\nНачало работы функции {func.__name__}')
-                        file.write((f'\nДокументация функции {func.__doc__}'))
-                        start = func(*args, **kwargs)
-                        file.write(f'\nРезультат работы функции {start}')
-                        file.write(f'\nКонец работы функции')
+                        file.write(f'\nДокументация функции: {func.__doc__}')
+                        result = func(*args, **kwargs)
+                        file.write(f'\nРезультат работы функции {result}')
+                        file.write('\nКонец программы')
                     except TypeError:
-                        return 'Данные об ошибке: TypeError, неверный формат параметров\nКонец программы'
+                        return 'Данные об ошибке: TypeError, параметры неверны\nКонец программы'
             elif not filename:
                 try:
-                    print('\nНачало работы функции {func.__name__}')
-                    print('\nДокументация функции {func.__name__')
-                    start = func(*args, **kwargs)
-                    print('\nРезультат работы функции {start}')
-                    print('\nКонец работы функции')
+                    print('\nНачало работы функции')
+                    print(f'\nДокументация функции: {func.__doc__}')
+                    result = func(*args, **kwargs)
+                    print(f'\nРезультат работы функции {result}')
+                    print('\nКонец программы')
                 except TypeError:
-                    return 'Данные об ошибке: TypeError, неверный формат параметров'
-                return start
+                    return 'Данные об ошибке: TypeError, параметры неверны'
+                return result
 
         return inner
 

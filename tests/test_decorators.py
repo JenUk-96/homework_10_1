@@ -34,16 +34,16 @@ def test_log_by_exception() -> None:
         return a - b
 
     res_1 = v_1(12, '6')
-    assert res_1 == 'Данные об ошибке: TypeError, неверный формат параметров\nКонец программы'
+    assert res_1 == 'Данные об ошибке: TypeError, параметры неверны\nКонец программы'
 
 
 def test_log_by_exception_2() -> None:
     '''Тестирование ошибки вывода в консоль'''
 
     @log()
-    def v_2(a: int, b: int) -> None:
+    def v_2(a: int, b: int) -> int:
         """Docstring"""
         return a - b
 
     res_2 = v_2(9, '5')
-    assert res_2 == 'Данные об ошибке: TypeError, неверный формат параметров'
+    assert res_2 == 'Данные об ошибке: TypeError, параметры неверны'
