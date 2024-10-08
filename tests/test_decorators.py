@@ -1,5 +1,3 @@
-from typing import Any
-
 from src.decorators import log
 
 
@@ -7,7 +5,7 @@ def test_log_1() -> None:
     """Тест записи в файл"""
 
     @log('log.txt')
-    def add(a: int, b:int) -> int:
+    def add(a: int, b: int) -> int:
         """Docstring"""
         return a + b
 
@@ -16,16 +14,20 @@ def test_log_1() -> None:
         logs = file.read()
     assert 'Начало работы функции' in logs
 
+
 @log()
-def add_numbers(a:int, b:int) -> int:
+def add_numbers(a: int, b: int) -> int:
     """Тест декоратора на сложение 2-х чисел в консоль"""
     return a + b
+
 
 result = add_numbers(5, 10)
 assert result == 15
 
+
 def test_log_by_exception() -> None:
     '''Тест ошибки записи в файл'''
+
     @log('log.txt')
     def v_1(a: int, b: int) -> int:
         """Docstring"""

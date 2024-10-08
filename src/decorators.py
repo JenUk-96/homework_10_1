@@ -8,7 +8,7 @@ def log(filename: Union[None, str] = None) -> Any:
 
     def wrapper(func: Any) -> Any:
         @wraps(func)
-        def inner(*args, **kwargs: Any) -> Any:
+        def inner(*args: Any, **kwargs: Any) -> Any:
             if filename:
                 with open('log.txt', 'a', encoding='utf-8') as file:
                     try:
@@ -29,5 +29,7 @@ def log(filename: Union[None, str] = None) -> Any:
                 except TypeError:
                     return 'Данные об ошибке: TypeError, неверный формат параметров'
                 return start
+
         return inner
+
     return wrapper
