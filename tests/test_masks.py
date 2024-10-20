@@ -20,7 +20,7 @@ def test_get_mask_card_number() -> None:
         ("", "Ошибка ввода"),
     ],
 )
-def test_get_mask_card_number_various_input_data(value, expected) -> Any:
+def test_get_mask_card_number_various_input_data(value: Any, expected: Any) -> Any:
     return get_mask_card_number(value) == expected
 
 
@@ -37,5 +37,5 @@ def test_get_mask_account() -> None:
         ("asdnajdfaskdvkas", "Ошибка ввода")
     ],
 )
-def test_get_mask_account_various_input_data(value, expected) -> Any:
+def test_get_mask_account_various_input_data(value: Any, expected: Any) -> Any:
     return get_mask_account(value) == expected
