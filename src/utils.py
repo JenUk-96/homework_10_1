@@ -47,3 +47,6 @@ if __name__ == "__main__":
         return amount
 
     print(financial_transactions('operations.json'))
+
+if __name__ == '__main__':
+    print (financial_transactions(.../data/operations.json))
