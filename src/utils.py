@@ -12,9 +12,10 @@ if __name__ == "__main__":
         format="%(levelname)s: %(filename)s: %(funcName)s %(lineno)s: %(asctime)s - %(message)s",
         filename="../logs/utils.log",
         filemode="w", encoding='utf-8'
-        )
+    )
     financial_transactions_logger = logging.getLogger()
     transaction_amount_logger = logging.getLogger()
+
 
     def financial_transactions(path: str) -> list:
         """Функция принимает на вход путь до JSON-файла и возвращает список словарей с данными о
@@ -36,6 +37,7 @@ if __name__ == "__main__":
             financial_transactions_logger.error("Файл с транзакциями не найден")
             return []
 
+
     def transaction_amount(trans: dict, currency: str = "RUB") -> Any:
         """Функция принимает на вход транзакцию и возвращает сумму транзакции в рублях"""
         if trans["operationAmount"]["currency"]["code"] == currency:
@@ -46,7 +48,5 @@ if __name__ == "__main__":
             transaction_amount_logger.info("Код валюты транзакции не RUB, произведена конвертация")
         return amount
 
-    print(financial_transactions('operations.json'))
 
-if __name__ == '__main__':
-    print (financial_transactions(.../data/operations.json))
+    print(financial_transactions('operations.json'))
