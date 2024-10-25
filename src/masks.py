@@ -43,7 +43,7 @@ if __name__ == "__main__":
         else:
             return "Ошибка ввода"
 
-    print(get_mask_card_number('0123456789012345'))
-    print(get_mask_card_number('123'))
-    print(get_mask_account('01234567890123456789'))
-    print(get_mask_account('0258'))
+    #print(get_mask_card_number('0123456789012345'))
+    #print(get_mask_card_number('123'))
+    #print(get_mask_account('01234567890123456789'))
+    #print(get_mask_account('0258'))

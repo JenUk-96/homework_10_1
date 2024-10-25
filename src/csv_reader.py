@@ -3,6 +3,7 @@ import os.path
 
 import pandas as pd
 
+file_path_csv = os.path.join(os.path.abspath(__file__), '../../data/transactions.csv')
 
 def read_transactions_dict(file_path: str) -> list:
     transactions = []
@@ -39,6 +40,6 @@ def read_transactions_pd(file_path: str) -> list:
 
 
 if __name__ == '__main__':
-    file_path = os.path.join(os.path.abspath(__file__), '../../data/transactions.csv')
+    file_path_csv = os.path.join(os.path.abspath(__file__), '../../data/transactions.csv')
     transactions = read_transactions_dict(file_path)
     print(transactions)
