@@ -5,6 +5,7 @@ import pandas as pd
 
 file_path_csv = os.path.join(os.path.abspath(__file__), '../../data/transactions.csv')
 
+
 def read_transactions_dict(file_path: str) -> list:
     transactions = []
     """Функция, которая принимает путь к файлу csv, и выдает список словарей с транзакциями"""
@@ -37,9 +38,3 @@ def read_transactions_pd(file_path: str) -> list:
         return transactions_dict
     except FileNotFoundError:
         return []
-
-
-if __name__ == '__main__':
-    file_path_csv = os.path.join(os.path.abspath(__file__), '../../data/transactions.csv')
-    transactions = read_transactions_dict(file_path)
-    print(transactions)

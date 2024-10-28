@@ -62,5 +62,3 @@ def transaction_amount(trans: dict, currency: str = "RUB") -> Any:
 
 
 print(financial_transactions('operations.json'))
-
-

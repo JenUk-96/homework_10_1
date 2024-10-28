@@ -2,7 +2,7 @@ from src.csv_reader import read_transactions_pd, file_path_csv
 from src.generators import filter_by_currency
 from src.pandas_reader import read_transactons_xtml, path_file_xlsx
 from src.processing import sort_by_date, filter_by_state
-#from src.search import search_via_description
+from src.search import search_via_description
 from src.utils import financial_transactions, path_file_json
 from src.widget import get_data, mask_account_card
 
@@ -12,10 +12,10 @@ def file_type_option() -> list:
     data_types = {1: "JSON", 2: "CSV", 3: "XLSX"}
 
     data_type_chosen = int(input(f"""Привет! Добро пожаловать в программу работы с банковскими транзакциями. 
-Выберите необходимый пункт меню:
-1. Получить информацию о транзакциях из {data_types[1]}-файла
-2. Получить информацию о транзакциях из {data_types[2]}-файла
-3. Получить информацию о транзакциях из {data_types[3]}-файла\n"""))
+    Выберите необходимый пункт меню:
+    1. Получить информацию о транзакциях из {data_types[1]}-файла
+    2. Получить информацию о транзакциях из {data_types[2]}-файла
+    3. Получить информацию о транзакциях из {data_types[3]}-файла\n"""))
     print(f"Для обработки выбран {data_types[data_type_chosen]}-файл.")
 
     transaction_list_raw = []
@@ -37,8 +37,8 @@ def state_option(transaction_list: list) -> list:
     """Выбор статуса операций, фильтрация данных по выбранному статусу."""
     status_list = ["EXECUTED", "CANCELED", "PENDING"]
     while True:
-        status_to_filter = input(f"""Введите статус, по которому необходимо выполнить фильтрацию.
-Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING\n""").upper()
+        status_to_filter = input("""Введите статус, по которому необходимо выполнить фильтрацию.
+                                     Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING\n""").upper()
         if status_to_filter in status_list:
             transaction_list = filter_by_state(transaction_list, status_to_filter)
             print(f"Операции отфильтрованы по статусу {status_to_filter}")
@@ -122,6 +122,7 @@ def main():
 
     # Вывод результата
     printing_results(transaction_list)
+
 
 if __name__ == '__main__':
     main()
