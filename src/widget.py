@@ -1,4 +1,4 @@
-from src import masks
+from src.masks import get_mask_card_number, get_mask_account
 
 
 # types_of_cars = ["Visa Electron", "Visa Classic", "Visa Gold", "Visa Platinum",
@@ -21,10 +21,10 @@ def mask_account_card(account_card: str) -> str:
         if len(count_number) == 16:
             # if name_card in types_of_cars:
             #    name_card ==
-            card_mask = masks.get_mask_card_number(count_number)
+            card_mask = get_mask_card_number(count_number)
             return f"{name_card} {card_mask}"
         elif len(count_number) == 20 and name_card == "Счет ":
-            account_mask = masks.get_mask_account(count_number)
+            account_mask = get_mask_account(count_number)
             return f"{name_card} {account_mask}"
         else:
             return "Ошибка ввода"
